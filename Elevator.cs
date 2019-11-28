@@ -22,7 +22,7 @@ namespace Area51elevator
             T2 = NumberOfFloors;
         }
 
-        private void Stop(int floor)
+        public void Stop(int floor)
         {
             Status = ElevatorStatus.STOPPED;
             G = floor;
@@ -30,7 +30,7 @@ namespace Area51elevator
             Console.WriteLine("Stopped at floor {0}", floor);
         }
 
-        private void Descend(int floor)
+        public void Descend(int floor)
         {
             for (int i = G; i >= 1; i--)
             {
@@ -43,7 +43,7 @@ namespace Area51elevator
             Status = ElevatorStatus.STOPPED;
             Console.WriteLine("Waiting..");
         }
-        private void Ascend(int floor)
+        public void Ascend(int floor)
         {
             for (int i = G; i <= T2; i++)
             {
@@ -57,10 +57,11 @@ namespace Area51elevator
             Console.WriteLine("Waiting..");
         }
 
-        void StayPut()
+        public void StayPut()
         {
             Console.WriteLine("That's our current floor");
         }
+
         public void FloorPress(int floor)
         {
             if (floor > T2)
